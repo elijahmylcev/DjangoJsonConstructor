@@ -10,6 +10,10 @@ class Subject(models.Model):
 
     class Meta:
         verbose_name = 'Какие-то сущности'
+        verbose_name_plural = 'Какие-то сущности'
+
+    def __str__(self):
+        return f'#{self.id} Code: {self.code}'
 
 
 class SubjectApplicationCondition(models.Model):
@@ -20,6 +24,7 @@ class SubjectApplicationCondition(models.Model):
 
     class Meta:
         verbose_name = 'Правила для каких-то правил'
+        verbose_name_plural = 'Правила для каких-то правил'
 
     def __str__(self):
         return f'Правила для {self.link_subject.code} #{self.link_subject.id}'
